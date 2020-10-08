@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+}
+.container.relojes {
+  background: #3cd19e;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+.reloj{
+  border-radius: 50%;
+  background: radial-gradient(#000, #000 0.1em, #fff 0.1em, #fff), #fff;
+  display: inline-block;
+  margin: 1%;
+  padding-bottom: 31%;
+  position: relative;
+  top: 50%;
+  width: 31%;
+  opacity: 0;
+  transform: translateY(-40%);
+}
+.reloj.show {
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: all 2.5s 0.5s cubic-bezier(0.12, 1.03, 0.34, 1);
+}
+.reloj::after {
+  background: red;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4%;
+  height: 4%;
+  z-index: 10;
+}
+.container-minutos, .container-hora, .container-segundos {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.container-hora {
+  animation: rotate 43200s infinite linear;
+}
+.linear .container-minutos {
+  animation: rotate 3600s infinite linear;
+}
+.linear .container-segundos {
+  animation: rotate 60s infinite linear;
+}
+.steps .container-minutos {
+  animation: rotate 3600s infinite steps(60);
+}
+.steps .container-segundos {
+  animation: rotate 60s infinite steps(60);
+}
+.local.steps .container-minutos {
+  animation: none;
+}
+.bounce .container-minutos {
+  transition: transform 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+.bounce .container-segundos {
+  transition: transform 0.2s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+}
+.hora {
+  background: #000;
+  width: 3.5%;
+  height: 40%;
+  position: absolute;
+  left: 48.25%;
+  top: 22%;
+  transform-origin: 50% 71%;
+}
+.minutos {
+  background: #000;
+  width: 3.5%;
+  height: 55%;
+  position: absolute;
+  left: 48.25%;
+  top: 7%;
+  transform-origin: 50% 78.5%;
+}
+.segundos {
+  background: red;
+  width: 1.5%;
+  height: 42%;
+  position: absolute;
+  left: 49.25%;
+  top: 20%;
+  transform-origin: 50% 71%;
+  z-index: 8;
+}
+.etiqueta {
+  background: #fff;
+  border-radius: 0.25em;
+  color: #000;
+  font-family: MyriadPro-Regular, 'Myriad Pro Regular', MyriadPro, 'Myriad Pro', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5em 0.75em 0.25em;
+  position: absolute;
+  top: -4em;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.reloj.station {
+  background: #fff url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg) no-repeat center;
+  background-size: 95%;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2) inset;
+}
+.reloj.station .segundos::before {
+  background: red;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: -9%;
+  left: -200%;
+  height: 18%;
+  width: 500%;
+}

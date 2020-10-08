@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+        <head>
+          <meta charset="UTF-8">
+          <title>Reloj Test</title>
+          <link  rel="stylesheet" href="../css/reloj.css">
+        </head>
+        <body>
+
+        <div class="container relojes bounce">
+          <article class="reloj station">
+            <section class="etiqueta">Reloj - Mexicali</section>
+            <section class="container-hora">
+              <section class="hora"></section>
+            </section>
+            <section class="container-minutos">
+              <section class="minutos"></section>
+            </section>
+            <section class="container-segundos">
+              <section class="segundos"></section>
+            </section>
+          </article>
+        </div>
+
+        <script>
+          var elements = document.querySelectorAll('.reloj');
+          for (var l = 0; l < elements.length; l++) {
+            elements[l].className = elements[l].className + ' show';
+          }
+        </script>
+
+        </body>
+</html>
