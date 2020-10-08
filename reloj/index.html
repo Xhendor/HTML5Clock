@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-        <head>
-          <meta charset="UTF-8">
-          <title>Reloj Test</title>
-          <link  rel="stylesheet" href="../css/reloj.css">
-        </head>
-        <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Reloj Test</title>
+  <link rel="stylesheet" href="../css/reloj.css">
+</head>
+<body>
 
-        <div class="container relojes bounce">
-          <article class="reloj station">
-            <section class="etiqueta">Reloj - Mexicali</section>
-            <section class="container-hora">
-              <section class="hora"></section>
-            </section>
-            <section class="container-minutos">
-              <section class="minutos"></section>
-            </section>
-            <section class="container-segundos">
-              <section class="segundos"></section>
-            </section>
-          </article>
-        </div>
+<div class="container relojes active bounce local">
+  <article class="reloj station">
+    <section class="etiqueta">Reloj - Mexicali</section>
+    <section class="container-hora">
+      <section class="hours"></section>
+    </section>
+    <section class="container-minutos">
+      <section class="minutes"></section>
+    </section>
+    <section class="container-segundos">
+      <section class="seconds"></section>
+    </section>
+  </article>
+</div>
 
-        <script>
-          var elements = document.querySelectorAll('.reloj');
-          for (var l = 0; l < elements.length; l++) {
-            elements[l].className = elements[l].className + ' show';
-          }
-        </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.3.0/moment-timezone.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.3.0/moment-timezone-utils.min.js"></script>
+<script src="../js/main.js"></script>
 
-        </body>
+</body>
 </html>
